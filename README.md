@@ -7,7 +7,7 @@
 
 空間複雜度：在電腦上執行計算演算法所佔用的記憶體資源
 
-# Insertion sort
+# Insertion sort：O(n^2)
 將原始資料，也就是input中的每一筆未排序資料加入已排序好的資料中，接著和前面的資料做比較並插入合適的位置
 
 Pseudocode:
