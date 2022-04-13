@@ -8,5 +8,15 @@
 空間複雜度：在電腦上執行計算演算法所佔用的記憶體資源
 
 # Insertion sort
+將原始資料，也就是input中的每一筆未排序資料加入已排序好的資料中，接著和前面的資料做比較並插入合適的位置
+
+Pseudocode:
+
+![8_a](https://user-images.githubusercontent.com/103521272/163130955-3e006dc0-5c7b-4272-9c26-005bc3a7b826.gif)
+
+Python:
+
+<img width="638" alt="截圖 2022-04-13 下午4 16 52" src="https://user-images.githubusercontent.com/103521272/163131935-06c0c3ba-424b-4c15-a26e-913097872227.png">
+
 
 
