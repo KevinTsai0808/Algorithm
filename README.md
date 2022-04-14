@@ -6,7 +6,7 @@
 
 空間複雜度：在電腦上執行計算演算法所佔用的記憶體資源
 
-## Insertion sort：O(n^2)
+## Insertion sort：O(n<sup>2</sup>)
 >將原始資料，也就是input中的每一筆未排序資料加入已排序好的資料中，接著和前面的資料做比較並插入合適的位置
 
 Pseudocode:
@@ -34,7 +34,7 @@ Python:
 
 ## Growth of Function
 >從上面所介紹的兩個演算法名稱旁邊可以看到 O( )函數，這個函數指的就是時間複雜度（T(n)），也是我們判斷演算法好壞一個重要的依據，除了 O()，我們也會用其他不同函數來表達演算法的時間複雜度，以下一一進行介紹
-* O(g(n)) Asymptotic Upper Bound : 只要我們找得到 c 和 n0，使得 n >= n0 時，0 <= f(n) <= cg(n)，就可以說f(n) = O(g(n))
+* O(g(n)) Asymptotic Upper Bound : 只要我們找得到 c 和 n<sub>0</sub>，使得 n >= n<sub>0</sub> 時，0 <= f(n) <= cg(n)，就可以說f(n) = O(g(n))
 <img width="672" alt="截圖 2022-04-14 下午3 43 38" src="https://user-images.githubusercontent.com/103521272/163338120-d639ec66-f2a7-4896-8ace-bfa9633908ee.png">
 
 
