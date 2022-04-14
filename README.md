@@ -35,9 +35,14 @@ Python:
 ## Growth of Function
 >從上面所介紹的兩個演算法名稱旁邊可以看到 O( )函數，這個函數指的就是時間複雜度（T(n)），也是我們判斷演算法好壞一個重要的依據，除了 O()，我們也會用其他不同函數來表達演算法的時間複雜度，以下一一進行介紹
 * O(g(n)) Asymptotic Upper Bound : 只要我們找得到 c 和 n<sub>0</sub>，使得 n >= n<sub>0</sub> 時，0 <= f(n) <= cg(n)，就可以說f(n) = O(g(n))
-<img width="672" alt="截圖 2022-04-14 下午3 43 38" src="https://user-images.githubusercontent.com/103521272/163338120-d639ec66-f2a7-4896-8ace-bfa9633908ee.png">
 
+  <img width="672" alt="截圖 2022-04-14 下午3 43 38" src="https://user-images.githubusercontent.com/103521272/163338120-d639ec66-f2a7-4896-8ace-bfa9633908ee.png">
+  
+    舉例而言，n<sup>2</sup> = O(n<sup>3</sup>) ; n<sup>2</sup> = O(2n<sup>2</sup>)，g(n)就相當於限制了f(n)的上界，用一張圖來呈現會長這樣：
 
+  <img width="472" alt="截圖 2022-04-14 下午4 04 59" src="https://user-images.githubusercontent.com/103521272/163341729-ad15e27d-5ab7-437b-94ba-fae8cd5afaad.png">
+  
+* Ω(g(n)) Asymptotic Lower Bound : 只要我們找得到 c 和 n<sub>0</sub>，使得 n >= n<sub>0</sub> 時，0 <= cg(n) <= f(n)，就可以說f(n) = Ω(g(n))
 
 
 
