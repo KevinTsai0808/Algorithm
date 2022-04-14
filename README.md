@@ -9,26 +9,26 @@
 ## Insertion sort：O(n<sup>2</sup>)
 >將原始資料，也就是input中的每一筆未排序資料加入已排序好的資料中，接著和前面的資料做比較並插入合適的位置
 
-Pseudocode:
+- Pseudocode:
 
 ![8_a](https://user-images.githubusercontent.com/103521272/163130955-3e006dc0-5c7b-4272-9c26-005bc3a7b826.gif)
 
-Python:
++ Python:
 
 <img width="638" alt="截圖 2022-04-13 下午4 16 52" src="https://user-images.githubusercontent.com/103521272/163131935-06c0c3ba-424b-4c15-a26e-913097872227.png">
 
 ## Merge sort：O(nlogn)
 >利用Divide-and-conquer完成排序，會將input原始資料分割成左半部分和右半部分，分割後的兩筆資料再接著往下分割直到資料內剩一個元素，接著只剩一個元素的左半資料和右半資料進行合併，合併的過程會藉由比較左半、右半資料內元素來進行排序，最後形成完整的排序資料
 
-Pseudocode (Merge) :
+- Pseudocode (Merge) :
 
 <img width="336" alt="Owtfo" src="https://user-images.githubusercontent.com/103521272/163158082-e47366ad-3624-4729-a3e9-f269dedbc511.png">
 
-Pseudocode (Merge sort) :
+- Pseudocode (Merge sort) :
 
 <img width="225" alt="wk49i" src="https://user-images.githubusercontent.com/103521272/163158251-2cf4fbae-dd29-4f11-8d28-3266af364866.png">
 
-Python:
+- Python:
 
 <img width="473" alt="截圖 2022-04-13 下午6 05 26" src="https://user-images.githubusercontent.com/103521272/163158307-0d9bf62e-38d0-4463-8c46-b9234dbc885d.png">
 
@@ -44,7 +44,13 @@ Python:
   
 * Ω(g(n)) Asymptotic Lower Bound : 只要我們找得到 c 和 n<sub>0</sub>，使得 n >= n<sub>0</sub> 時，0 <= cg(n) <= f(n)，就可以說f(n) = Ω(g(n))
 
+  <img width="673" alt="截圖 2022-04-14 下午4 09 03" src="https://user-images.githubusercontent.com/103521272/163342795-52f14060-56f7-4625-a3d2-7cf7a5f4d903.png">
+  
+  舉例而言，n<sup>3</sup> = Ω(n<sup>2</sup>) ; 2n<sup>2</sup> = Ω(n<sup>2</sup>)，g(n)就相當於限制了f(n)的下界，用一張圖來呈現會長這樣：
 
+  <img width="449" alt="截圖 2022-04-14 下午4 20 12" src="https://user-images.githubusercontent.com/103521272/163344234-8bd4cd5c-1186-40d0-8ed4-433bb0f0e68d.png">
+  
+  從這兩個函數可以看出他們之間存在著對稱關係，也就是Transpose Symmetry，若f(n) = O(g(n))，則g(n) = Ω(f(n))
 
 
 
