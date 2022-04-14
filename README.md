@@ -62,6 +62,10 @@
   
    舉例而言，4n<sup>2</sup> = Θ(n<sup>2</sup>) ; 3n<sup>2</sup> + 2n = Θ(n<sup>2</sup>)，由定義可以知道之所以說Θ( )是tight bound是因為他限制f(n)和g(n)為同個數量級，我們也可以說當n趨近於無限大時，lim f(n)/g(n) = a，a表示一個常數
 
+  <img width="451" alt="截圖 2022-04-14 下午5 02 19" src="https://user-images.githubusercontent.com/103521272/163351752-ab6162ac-fb33-4ddd-8ff0-2ec2f28c836d.png">
+  
+   從以上可以知道，若f(n) = Θ(g(n)，則g(n) = Θ(f(n)
+ 
 
 
 
