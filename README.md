@@ -51,6 +51,8 @@
   <img width="449" alt="截圖 2022-04-14 下午4 20 12" src="https://user-images.githubusercontent.com/103521272/163344234-8bd4cd5c-1186-40d0-8ed4-433bb0f0e68d.png">
   
   從這兩個函數可以看出他們之間存在著對稱關係，也就是Transpose Symmetry，若f(n) = O(g(n))，則g(n) = Ω(f(n))
+  
+* Θ(g(n) Asymptotic Tight Bound : 只要我們找得到 c<sub>1</sub>、<sub>2</sub> 和 n<sub>0</sub>，使得 n >= n<sub>0</sub> 時，0 <= c<sub>1</sub>g(n) <= f(n) <= c<sub>2</sub>g(n)，就可以說f(n) =  Θ(g(n))
 
 
 
