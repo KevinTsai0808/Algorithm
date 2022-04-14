@@ -60,8 +60,7 @@
 
   <img width="670" alt="截圖 2022-04-14 下午4 38 48" src="https://user-images.githubusercontent.com/103521272/163347561-6f156be3-56e8-4b7e-8a98-c6b648bc0e2b.png">
   
-  舉例而言，4n<sup>2</sup> = Θ(n<sup>2</sup>) ; 3n<sup>2</sup> + 2n = Θ(n<sup>2</sup>)，由定義可以知道之所以說Θ( )是tight bound是因為他限制f(n)和g(n)為同個數量級，我們也可以說 
- $$\frac{\sin(x)}{x}$$
+   舉例而言，4n<sup>2</sup> = Θ(n<sup>2</sup>) ; 3n<sup>2</sup> + 2n = Θ(n<sup>2</sup>)，由定義可以知道之所以說Θ( )是tight bound是因為他限制f(n)和g(n)為同個數量級，我們也可以說當n趨近於無限大時，lim f(n)/g(n) = a，a表示一個常數
 
 
 
