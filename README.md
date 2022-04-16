@@ -25,7 +25,28 @@
 
 - Python:
 
-<img width="473" alt="截圖 2022-04-13 下午6 05 26" src="https://user-images.githubusercontent.com/103521272/163158307-0d9bf62e-38d0-4463-8c46-b9234dbc885d.png">
+<img width="728" alt="截圖 2022-04-16 下午3 32 52" src="https://user-images.githubusercontent.com/103521272/163666240-171bcc2c-57e6-44bd-baf5-163b4340fb10.png">
+
+在 Merge 函數中有四個參數，分別是 要做排列的資料（data）、資料最左側索引值（left）、資料最右側索引值（Right）、資料中間索引值（middle）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Growth of Function
 >從上面所介紹的兩個演算法名稱旁邊可以看到 O( )函數，這個函數指的就是時間複雜度（T(n)），也是我們判斷演算法好壞一個重要的依據，除了 O()，我們也會用其他不同函數來表達演算法的時間複雜度，以下一一進行介紹
