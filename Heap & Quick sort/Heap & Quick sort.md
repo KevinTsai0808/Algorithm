@@ -1,17 +1,23 @@
 
-# Heap sort：O(n<sup>2</sup>)
->先將原始資料透過遞迴比較方法形成樹的結構，這個樹的特性是父節點會大於（小於）子節點<br>接著透過交換方法取得每一次迭代中樹的最大值並放入陣列，最後得到完整排序資料
+# Heap sort：O(nlogn)
+>先將原始資料透過遞迴比較方法形成樹的結構，這個樹的特性是父節點會大於（小於）子節點<br>接著透過交換方法取得每一次迭代中樹的最大值（最小值）並放入陣列，最後得到完整排序資料
 
-- Pseudocode:
+- Pseudocode：（Max-Heap） <br>
+建立樹的結構有兩個重點(這邊以由小到大的排列為例），首先是 Max-Heap ，這個方法會定義目前元素在樹中的位置。
+<img width="500" alt="截圖 2022-05-09 下午5 45 18" src="https://user-images.githubusercontent.com/103521272/167384664-93ee0cc7-e3a7-4e2c-b5c3-2e2e8b396778.png">
 
-![8_a](https://user-images.githubusercontent.com/103521272/163130955-3e006dc0-5c7b-4272-9c26-005bc3a7b826.gif)
 
-+ Python:
- 
-<img width="500" alt="截圖 2022-04-13 下午4 16 52" src="https://user-images.githubusercontent.com/103521272/163131935-06c0c3ba-424b-4c15-a26e-913097872227.png">
-程式碼較為直觀，在 for 迴圈中從 index1 開始取並將 "key" 設為目前的索引值，接著將 “i" 設為 key 的前一個索引以便比較。
-在 while 迴圈中開始進行比較，若目前 i 對應的值比 key 大，則 i+1，也就是 key 的位置會宣告成 i 對應的值並且 i 往前一個位置。
-迴圈會在 i 對應的值比 key 小時或是 i < 0 時（也就是 key 值為 input 中最小的數）停止。
+
++ Java：（Max-Heap）
+<img width="500" alt="截圖 2022-05-09 下午5 56 50" src="https://user-images.githubusercontent.com/103521272/167386625-1c2e9be9-0404-46e9-bf6d-e33f677165c5.png">
+Max-Heap 的參數分別是一個陣列以及陣列的 index ，首先存取 i 的子節點位置，接著定義樹的大小為 heap-size，也就是樹的節點數量，由於後面執行 sort 的時候 heap-size 並不會總是等於陣列長度，因此只有當 heap-size 尚未被前面敘述定義時才會等於陣列長度。<br><br>
+
+<img width="426" alt="截圖 2022-05-09 下午6 04 22" src="https://user-images.githubusercontent.com/103521272/167388016-cb5f1558-9572-4583-935d-272f98181ac6.png">
+然後是父節點和子節點之間的比較，首先比較左邊子節點和父節點，較大的再和右邊子節點比較。<br><br>
+
+<img width="337" alt="截圖 2022-05-09 下午6 11 34" src="https://user-images.githubusercontent.com/103521272/167389293-fbc6b6cf-e782-4210-b57c-efb2dcbd1099.png">
+最後若目前的父節點不是三個中最大的，那麼就將最大的那個節點和父節點交換，交換以後原本的父節點再繼續和最大的那個節點的子節點進行比較，也就是重新執行 Max-Heap 。<br>
+執行之後原本的父節點就會被排列在樹中適當的位置，也就是大於等於底下兩個分支並且小於目前位置的父節點。
 
 # Merge sort：O(nlogn)
 >利用Divide-and-conquer完成排序，會將input原始資料分割成左半部分和右半部分<br>分割後的兩筆資料再接著往下分割直到資料內剩一個元素，接著只剩一個元素的左半資料和右半資料進行合併<br>合併的過程會藉由比較左半、右半資料內元素來進行排序，最後形成完整的排序資料。
