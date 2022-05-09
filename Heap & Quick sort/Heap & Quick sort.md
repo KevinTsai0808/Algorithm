@@ -30,7 +30,7 @@ Max-Heapify 的參數分別是一個陣列以及陣列的 index ，首先存取 
 <img width="407" alt="截圖 2022-05-10 上午12 44 44" src="https://user-images.githubusercontent.com/103521272/167457794-2f118efc-1bad-4514-a9ef-fb7c101cdd08.png">
 
 同樣的只有當 heap-size 尚未被前面敘述定義時才會等於陣列長度。<br>
-然後從最後一個父節點開始往上做 Max-Heapify，之所以由下往上是因為只要做完一次 Max-Heapify 就可以保證該節點以下都是 Max-Heap 。<br><br>
+然後從最後一個父節點開始往上做 Max-Heapify，之所以由下往上是因為只要做完一次 Max-Heapify 就可以保證該節點以下都是 Max-Heap 。<br>
 
 當 Build-Max-Heap 執行完後，每一個父節點都會比子節點還要大，然而這個條件並不足以完成排序，像是[16, 3, 6, 1, 2, 5]，就是符合樹的條件但沒有排序完成的例子，因此我們要進行下一個步驟。
 
