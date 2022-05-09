@@ -3,7 +3,7 @@
 >先將原始資料透過遞迴比較方法形成樹的結構，也就是達成 Heap ，這個樹的特性是父節點會大於（小於）子節點<br>接著透過交換方法取得每一次迭代中樹的最大值（最小值）並放入陣列，最後得到完整排序資料
 
 - Pseudocode：（Max-Heapify） <br>
-建立樹的結構有兩個重點(這邊以由小到大的排列為例），首先是 Max-Heapify ，這個方法會定義目前元素在樹中的位置。
+建立 Max-Heap 有兩個重點(這邊以由小到大的排列為例），首先是 Max-Heapify ，這個方法會定義目前元素在樹中的位置。
 <img width="500" alt="截圖 2022-05-09 下午5 45 18" src="https://user-images.githubusercontent.com/103521272/167384664-93ee0cc7-e3a7-4e2c-b5c3-2e2e8b396778.png">
 
 
@@ -20,6 +20,22 @@ Max-Heapify 的參數分別是一個陣列以及陣列的 index ，首先存取 
 執行之後原本的父節點就會被排列在樹中適當的位置，也就是大於等於底下兩個分支並且小於目前位置的父節點。
 
 ***
+
+- Pseudocode：（Build-Max-Heap） <br>
+<img width="500" alt="截圖 2022-05-10 上午12 14 07" src="https://user-images.githubusercontent.com/103521272/167452611-1d239c8f-1c45-40a9-9c59-38bc43a19f06.png">
+
+第二個重點是該從做幾次 Max-Heapify 來達到 Max-Heap，因此使用 Build-Max-Heap 。
+
++ Java：（Build-Max-Heap）<br>
+<img width="407" alt="截圖 2022-05-10 上午12 44 44" src="https://user-images.githubusercontent.com/103521272/167457794-2f118efc-1bad-4514-a9ef-fb7c101cdd08.png">
+
+同樣的只有當 heap-size 尚未被前面敘述定義時才會等於陣列長度。<br>
+然後從最後一個父節點開始往上做 Max-Heapify，之所以由下往上是因為只要做完一次 Max-Heapify 就可以保證該節點以下都是 Max-Heap 。<br><br>
+
+當 Build-Max-Heap 執行完後，每一個父節點都會比子節點還要大，然而這個條件並不足以完成排序，像是[16, 3, 6, 1, 2, 5]，就是符合樹的條件但沒有排序完成的例子，因此我們要進行下一個步驟。
+
+***
+
 
 
 # Merge sort：O(nlogn)
