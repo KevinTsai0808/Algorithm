@@ -63,6 +63,9 @@ Heapsort 的參數只有 input 陣列，首先就是利用前面定義的 Build-
 
 <img width="500" alt="截圖 2022-05-10 下午2 54 37" src="https://user-images.githubusercontent.com/103521272/167566583-15bf42ce-c773-48df-98de-6f1f4b605a18.png">
 
+首先設定最後一個元素為 pivot（基準點），接著將每一個元素和 pivot 做比較，j 變數代表目前做比較的數，i 變數代表了目前比 pivot 小的數的最後一個位置。<br>
+假設要比較的數小於 pivot ，就會讓 i + 1（小於 pivot的數列 +1）然後 j 和 i 交換；假設要比較的數大於 pivot ，則 i 不變並進行下一個數的比較。
+
 
 
 
