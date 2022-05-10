@@ -2,14 +2,14 @@
 # Heap sort：O(nlogn)
 >先將原始資料透過遞迴比較方法形成樹的結構，也就是達成 Heap ，這個樹的特性是父節點會大於（小於）子節點<br>接著透過交換方法取得每一次迭代中樹的最大值（最小值）並放入陣列，最後得到完整排序資料
 
-- Pseudocode：（Max-Heapify） <br>
-建立 Max-Heap 有兩個重點(這邊以由小到大的排列為例），首先是 Max-Heapify ，這個方法會定義目前元素在樹中的位置。
+- Pseudocode：（Max-Heapify）
 <img width="500" alt="截圖 2022-05-09 下午5 45 18" src="https://user-images.githubusercontent.com/103521272/167384664-93ee0cc7-e3a7-4e2c-b5c3-2e2e8b396778.png">
 
-
+建立 Max-Heap 有兩個重點(這邊以由小到大的排列為例），首先是 Max-Heapify ，這個方法會定義目前元素在樹中的位置。<br>
 
 + Java：（Max-Heapify）
 <img width="500" alt="截圖 2022-05-09 下午5 56 50" src="https://user-images.githubusercontent.com/103521272/167386625-1c2e9be9-0404-46e9-bf6d-e33f677165c5.png">
+
 Max-Heapify 的參數分別是一個陣列以及陣列的 index ，首先存取 i 的子節點位置，接著定義樹的大小為 heap-size，也就是樹的節點數量，由於後面執行 sort 的時候 heap-size 並不會總是等於陣列長度，因此只有當 heap-size 尚未被前面敘述定義時才會等於陣列長度。<br><br>
 
 <img width="426" alt="截圖 2022-05-09 下午6 04 22" src="https://user-images.githubusercontent.com/103521272/167388016-cb5f1558-9572-4583-935d-272f98181ac6.png">
@@ -36,16 +36,28 @@ Max-Heapify 的參數分別是一個陣列以及陣列的 index ，首先存取 
 
 ***
 
+- Pseudocode：（Heapsort） <br>
+<img width="500" alt="截圖 2022-05-10 上午10 48 28" src="https://user-images.githubusercontent.com/103521272/167532831-80cda8c0-906d-4b84-9817-8b76ba38235a.png">
+
+Heapsort 函數利用前面定義的函數先建立 Max-Heap(Min-Heap)，接著進行最後的排序。
+
++ Java：（Heapsort）<br>
+<img width="500" alt="截圖 2022-05-10 上午10 54 01" src="https://user-images.githubusercontent.com/103521272/167533460-e6bcb3f5-531d-4bc2-b7a1-f863bee89715.png">
+
+Heapsort 的參數只有 input 陣列，首先就是利用前面定義的 Build-Max-Heap 建立好樹的結構，接著利用 for 迴圈每次取出第一個節點，也就是最大的節點。取出的方式是藉由交換第一個和最後一個節點，交換以後再將整個樹的大小減一。那麼原本的第一個節點就會被取出，並且樹目前除了第一個節點（原本的最後一個節點）其他都呈現 Heap 狀態，因此要對第一個節點進行 Max-Heapify。<br><br>
+迴圈執行完後整個陣列就完成由小到大的排列了！
 
 
-# Merge sort：O(nlogn)
->利用Divide-and-conquer完成排序，會將input原始資料分割成左半部分和右半部分<br>分割後的兩筆資料再接著往下分割直到資料內剩一個元素，接著只剩一個元素的左半資料和右半資料進行合併<br>合併的過程會藉由比較左半、右半資料內元素來進行排序，最後形成完整的排序資料。
 
-- Pseudocode (Merge) :
 
-<img width="500" alt="Owtfo"  src="https://user-images.githubusercontent.com/103521272/163158082-e47366ad-3624-4729-a3e9-f269dedbc511.png" >
+#  Quick sort：O(nlogn)
+>
 
-- Pseudocode (Merge sort) :
+- Pseudocode () :
+
+
+
+- Pseudocode () :
 
 <img width="500" alt="wk49i" src="https://user-images.githubusercontent.com/103521272/163158251-2cf4fbae-dd29-4f11-8d28-3266af364866.png">
 
