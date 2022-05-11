@@ -73,6 +73,7 @@ Heapsort 的參數只有 input 陣列，首先就是利用前面定義的 Build-
 
 
 + Java：（Quick sort）<br>
+<img width="859" alt="截圖 2022-05-11 上午11 32 10" src="https://user-images.githubusercontent.com/103521272/167763716-f44b6676-9501-4fb6-8520-14da0840d41d.png">
 
 
 
