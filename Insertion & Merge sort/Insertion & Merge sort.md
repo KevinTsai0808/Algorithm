@@ -7,8 +7,10 @@
 ![8_a](https://user-images.githubusercontent.com/103521272/163130955-3e006dc0-5c7b-4272-9c26-005bc3a7b826.gif)
 
 + Python:
- 
-<img width="500" alt="截圖 2022-04-13 下午4 16 52" src="https://user-images.githubusercontent.com/103521272/163131935-06c0c3ba-424b-4c15-a26e-913097872227.png">
+
+ <img width="500" alt="截圖 2022-06-17 下午10 40 00" src="https://user-images.githubusercontent.com/103521272/174320345-7ca202fb-aa5e-4621-9e6c-0a9c8bbb33a2.png">
+
+
 程式碼較為直觀，在 for 迴圈中從 index1 開始取並將 "key" 設為目前的索引值，接著將 “i" 設為 key 的前一個索引以便比較。
 在 while 迴圈中開始進行比較，若目前 i 對應的值比 key 大，則 i+1，也就是 key 的位置會宣告成 i 對應的值並且 i 往前一個位置。
 迴圈會在 i 對應的值比 key 小時或是 i < 0 時（也就是 key 值為 input 中最小的數）停止。
@@ -31,7 +33,8 @@
 
 在 Merge 函數中有四個參數，分別是要做排列的資料（data）、資料最左側索引值（left）、資料最右側索引值（Right）、資料中間索引值（middle），首先建立兩個 list 放置左半以及右半數列，要注意的是這時左半和右半都已是排列好的狀態。
 
-<img width="500" alt="截圖 2022-04-16 下午3 55 06" src="https://user-images.githubusercontent.com/103521272/163667041-9fa86c08-901a-43ad-85ac-057329f55fb5.png">
+<img width="500" alt="截圖 2022-04-16 下午3 55 06" src="https://user-images.githubusercontent.com/103521272/163667041-9fa86c08-901a-43ad-85ac-057329f55fb5.png"><img width="357" alt="截圖 2022-06-17 下午10 39 23" src="https://user-images.githubusercontent.com/103521272/174320250-0337a209-f659-445a-827e-f700ebda8c03.png">
+
 
 這邊在 left 跟 right 建立 sentinel 由於 sentinel 是一個比 input 都大的數，因此我宣告他的值為 data 中最大的值加一。<br>
 
