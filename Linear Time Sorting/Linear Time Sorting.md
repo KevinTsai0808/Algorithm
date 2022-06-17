@@ -52,11 +52,27 @@ Counting Sort 的參數有三個，第一個就是 input 陣列，第二個是�
 <img width="500" alt="截圖 2022-06-17 下午6 16 44" src="https://user-images.githubusercontent.com/103521272/174279023-021d5633-4c72-4300-bf3e-1f4c60f3ec2a.png">
 
 # Bucket Sort：Worst:O(n^2) Best:O(n)
->此演算法假設 input 為隨機分佈在[0,1)區間內的的浮點數  
+>此演算法假設 input 為隨機分佈在0~1區間內的的浮點數
 >根據 input 大小建立相對應數量的桶子，每一個桶子代表一個 LinkedList  
 >待 input 每一個元素加入到桶子後，由於可能存在多個元素於一個桶子的情況，因此對每一個 LinkedList 進行排序  
 >最後將每一個 LinkedList 進行串接
 - Pseudocode：（Radix Sort）
+
+<img width="500" alt="截圖 2022-06-17 下午8 57 30" src="https://user-images.githubusercontent.com/103521272/174302828-eba211a1-135e-44f5-ae68-3ab160148762.png">
+
+- Java：(Radix Sort)
+<img width="500" alt="截圖 2022-06-17 下午8 59 23" src="https://user-images.githubusercontent.com/103521272/174303142-683117e3-20be-42d2-a474-e2374ba7586d.png">
+
+首先建立長度為 input 大小的 List，也就是建立 n 個桶子，而每一個桶子內放的是一個 LinkedList 的記憶體位置。  
+接著將 input 中每一個數乘上 input 數量並取 floor 函數放入對應桶子內，若是有多個數對應到相同桶子，則會插入在 LinkedList 的最前面來節省插入執行的時間。
+
+在37~42行，由於 input 內可能有一個以上的數對應到相同桶子內，因此要對每一個桶子內的 LinkedList 進行排序，這邊使用的是 Insertion Sort，由於是單向 LinkedList，只有儲存下一個元素的記憶體位置，在 Insertion Sort 實作上較為複雜，因此先將 LinkedList 轉成 Array 後進行排序，排序後再轉回 LinkedList。
+
+在45~51行則透過迴圈尋訪每一個桶子並儲存 LinkedList 內的元素至陣列中完成串接的動作。
+
+以下是主程式碼以及執行結果：
+
+
 
 
 
