@@ -19,10 +19,9 @@ Counting Sort 的參數有三個，第一個就是 input 陣列，第二個是�
 在29~33的迴圈中，由於 c 陣列目前儲存是小於等於此數的 input 有多少，因此可以發現 c 陣列中的每一個值就是該數字應該放入的位置加一。舉剛剛的例子，c[1] = 1、c[2] = 1、c[3] = 2，因此我們走訪 input 每一個數，當碰到 3 時，則去尋找 c[3] 的值，發現是 2 代表 3 在 output 中應該放在從前面數來第二個位置，也就是索引1。比較特別的是當我們走訪 input 時，是由最後一筆尋訪到第一筆，而不是從第一筆開始，由最後一筆開始可以保證 Counting Sort 為 stable 的演算法，也就是說，假設今天 input 存在兩個10，他們在 input 的前後順序是有意義的，而 stable 的演算法可以保證在排序之後兩個10的前後順序仍然和 input 相同。
 
 以下是主程式碼以及執行結果：
+<img width="500" alt="截圖 2022-06-17 下午4 25 02" src="https://user-images.githubusercontent.com/103521272/174258579-da72c899-2bd5-446d-a405-d02e2b3ca175.png">
 
-<img width="500" alt="截圖 2022-06-17 下午4 23 43" src="https://user-images.githubusercontent.com/103521272/174258366-cae75528-d4ce-4271-a635-0173ccbbfe73.png">
-
-
+<img width="500" alt="截圖 2022-06-17 下午4 24 43" src="https://user-images.githubusercontent.com/103521272/174258643-abdfb339-6dbf-44e7-9b82-6dbbd4267d89.png">
 
 
 
