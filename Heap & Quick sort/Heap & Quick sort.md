@@ -71,13 +71,14 @@ Heapsort 的參數只有 input 陣列，首先就是利用前面定義的 Build-
 
 - Pseudocode：（Quick sort） <br>
 
-
-+ Java：（Quick sort）<br>
 <img width="500" alt="截圖 2022-05-11 上午11 32 10" src="https://user-images.githubusercontent.com/103521272/167763716-f44b6676-9501-4fb6-8520-14da0840d41d.png">
 
 
++ Java：（Quick sort）<br>
 
 <img width="500" alt="截圖 2022-05-11 上午9 44 31" src="https://user-images.githubusercontent.com/103521272/167752056-ca3e1791-2164-4d7c-a6b6-8d98ae651ab9.png">
+
+在 Quick Sort 中會遞迴執行 Partiton，當第一次 Partiton 執行後，再分別對 pivot 左邊及右邊執行 Partiton，依此類推，最後完成排序。
 
 
 
