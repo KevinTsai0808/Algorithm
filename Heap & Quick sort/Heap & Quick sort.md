@@ -12,10 +12,10 @@
 
 Max-Heapify 的參數分別是一個陣列以及陣列的 index ，首先存取 i 的子節點位置，接著定義二元樹的大小為 heap-size，也就是樹的節點數量，由於後面執行 sort 的時候 heap-size 並不會總是等於陣列長度，因此只有當 heap-size 尚未被前面敘述定義時才會等於陣列長度。<br><br>
 
-<img width="426" alt="截圖 2022-05-09 下午6 04 22" src="https://user-images.githubusercontent.com/103521272/167388016-cb5f1558-9572-4583-935d-272f98181ac6.png">
+<img width="500" alt="截圖 2022-05-09 下午6 04 22" src="https://user-images.githubusercontent.com/103521272/167388016-cb5f1558-9572-4583-935d-272f98181ac6.png">
 然後是父節點和子節點之間的比較，首先比較左邊子節點和父節點，較大的再和右邊子節點比較。<br><br>
 
-<img width="337" alt="截圖 2022-05-09 下午6 11 34" src="https://user-images.githubusercontent.com/103521272/167389293-fbc6b6cf-e782-4210-b57c-efb2dcbd1099.png">
+<img width="500" alt="截圖 2022-05-09 下午6 11 34" src="https://user-images.githubusercontent.com/103521272/167389293-fbc6b6cf-e782-4210-b57c-efb2dcbd1099.png">
 最後若目前的父節點不是三個中最大的，那麼就將最大的那個節點和父節點交換，交換以後原本的父節點再繼續和最大的那個節點的子節點進行比較，也就是重新執行 Max-Heap 。<br><br>
 執行之後原本的父節點就會被排列在樹中適當的位置，也就是大於等於底下兩個分支並且小於目前位置的父節點。
 
@@ -27,7 +27,7 @@ Max-Heapify 的參數分別是一個陣列以及陣列的 index ，首先存取 
 第二個重點是該從做幾次 Max-Heapify 來達到 Max-Heap，因此使用 Build-Max-Heap 。
 
 + Java：（Build-Max-Heap）<br>
-<img width="407" alt="截圖 2022-05-10 上午12 44 44" src="https://user-images.githubusercontent.com/103521272/167457794-2f118efc-1bad-4514-a9ef-fb7c101cdd08.png">
+<img width="500" alt="截圖 2022-05-10 上午12 44 44" src="https://user-images.githubusercontent.com/103521272/167457794-2f118efc-1bad-4514-a9ef-fb7c101cdd08.png">
 
 同樣的只有當 heap-size 尚未被前面敘述定義時才會等於陣列長度。<br>
 然後從最後一個父節點開始往上做 Max-Heapify，之所以由下往上是因為只要做完一次 Max-Heapify 就可以保證該節點以下都是 Max-Heap 。<br>
@@ -73,7 +73,7 @@ Heapsort 的參數只有 input 陣列，首先就是利用前面定義的 Build-
 
 
 + Java：（Quick sort）<br>
-<img width="859" alt="截圖 2022-05-11 上午11 32 10" src="https://user-images.githubusercontent.com/103521272/167763716-f44b6676-9501-4fb6-8520-14da0840d41d.png">
+<img width="500" alt="截圖 2022-05-11 上午11 32 10" src="https://user-images.githubusercontent.com/103521272/167763716-f44b6676-9501-4fb6-8520-14da0840d41d.png">
 
 
 
