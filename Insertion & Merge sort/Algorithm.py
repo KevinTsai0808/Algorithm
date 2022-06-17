@@ -9,12 +9,12 @@ Input_Data = list(eval(input("Input_Data: ")))
 
 def Insertion_sort(data):
     for j in range(1, len(data)):
-        key = Input_Data[j]
+        key = data[j]
         i = j-1
-        while i >= 0 and Input_Data[i] > key:
-            Input_Data[i+1] = Input_Data[i]
+        while i >= 0 and data[i] > key:
+            data[i+1] = data[i]
             i -= 1
-        Input_Data[i+1] = key
+        data[i+1] = key
     return data
 
 Insertion_sort(Input_Data) 
