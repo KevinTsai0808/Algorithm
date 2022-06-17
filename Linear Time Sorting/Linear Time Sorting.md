@@ -35,16 +35,21 @@ Counting Sort 的參數有三個，第一個就是 input 陣列，第二個是�
 
 - Java：（Radix Sort）
 
-<img width="295" alt="截圖 2022-06-17 下午5 03 02" src="https://user-images.githubusercontent.com/103521272/174265761-588fff6f-3305-4225-964b-acc2b54dc3cf.png">
+<img width="500" alt="截圖 2022-06-17 下午5 03 02" src="https://user-images.githubusercontent.com/103521272/174265761-588fff6f-3305-4225-964b-acc2b54dc3cf.png">
 
 從 Pseudocode 可以看到 Radix Sort的參數中除了 input 還有 d ，d 代表的是位數，每一個位數都屌表要進行一次排序，為了找出 d 是多少，我們首先利用 findmax 找出 input 中最大的數，並且取的該值總共有幾位數，而 exp 變數是為了取得每一位數的值，會在 Counting Sort 中用到。
 
 找出 d 之後，接著從1（個位數）開始到 d ，對每一位數進行 Counting Sort，而每次迴圈傳入 Counting Sort 的參數會是前一次排好之後的陣列。
 
-<img width="443" alt="截圖 2022-06-17 下午5 36 27" src="https://user-images.githubusercontent.com/103521272/174271899-e8d63f1e-b0db-4ac3-9202-53dddaee7e36.png">
+<img width="500" alt="截圖 2022-06-17 下午5 36 27" src="https://user-images.githubusercontent.com/103521272/174271899-e8d63f1e-b0db-4ac3-9202-53dddaee7e36.png">
 
 由於上面已經介紹了 Counting Sort 這邊就不贅述，不太一樣的是由於每一位數的值為0~9，因此 c 陣列的長度為10，而在 c 陣列中，可以看到儲存的值為(arr[i]/exp)%10，在第一次迴圈時，exp傳入的值為1，arr[i] % 10可以得到個位數的值，而第二次迴圈時，exp傳入的值為10，arr[i]/10 % 10可以得到十位數的值，依此類推。
 
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-06-17 下午6 16 24" src="https://user-images.githubusercontent.com/103521272/174278967-fc8386f0-8d5e-4fc4-a9ae-59e4c44b27dc.png">
+
+<img width="500" alt="截圖 2022-06-17 下午6 16 44" src="https://user-images.githubusercontent.com/103521272/174279023-021d5633-4c72-4300-bf3e-1f4c60f3ec2a.png">
 
 
 
