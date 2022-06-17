@@ -72,7 +72,9 @@ Counting Sort 的參數有三個，第一個就是 input 陣列，第二個是�
 
 以下是主程式碼以及執行結果：
 
+<img width="500" alt="截圖 2022-06-17 下午10 04 55" src="https://user-images.githubusercontent.com/103521272/174314131-a1ded29e-aaa4-4bc8-939a-9c5472cb76e7.png">
 
+<img width="500" alt="截圖 2022-06-17 下午10 05 25" src="https://user-images.githubusercontent.com/103521272/174314213-04c4ec2a-7983-4f60-92ee-e2572e78317b.png">
 
 
 
