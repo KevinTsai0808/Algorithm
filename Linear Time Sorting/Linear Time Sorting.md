@@ -20,8 +20,7 @@ Counting Sort 的參數有三個，第一個就是 input 陣列，第二個是�
 
 以下是主程式碼以及執行結果：
 
-<img width="500" alt="截圖 2022-06-17 下午4 20 42" src="https://user-images.githubusercontent.com/103521272/174257853-f58f7f09-4c39-426d-999f-043f584d9ff7.png">
-<img width="500" alt="截圖 2022-06-17 下午4 21 59" src="https://user-images.githubusercontent.com/103521272/174258062-eb2c1910-6731-42b5-a26a-ea648e2f5dad.png">
+<img width="500" alt="截圖 2022-06-17 下午4 23 43" src="https://user-images.githubusercontent.com/103521272/174258366-cae75528-d4ce-4271-a635-0173ccbbfe73.png">
 
 
 
