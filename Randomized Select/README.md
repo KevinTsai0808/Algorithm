@@ -9,3 +9,10 @@
 如果 k 比較大，則可以確定第 i 小的數位在 pivot 之前的數列；如果 k 比較小，則可以確定第 i 小的數位在 pivot 之後的數列。
 
 在 Best-case 中，可以在 O(n) 的情況下完成，也就是第一次 Partition 就找到第 i 小的數，然而在 Worst-case 中，假設要找最小的數，而每一次 Partition 都取到 input 中最大的值，則時間複雜度的遞迴式就會變成：T(n) = T(n - 1) + Θ(n)，如此一來時間複雜度就會變成 O(n^2)。
+
+因此發展出了另一套演算法使得 Randomized Select 在 Worst-case 也能在 O(n) 完成，以下是步驟：  
+1. 將 input 的 n 個元素每5個分成一組，最後不滿5個數的自成一組，總共分成 n/5 （上取整）組。
+2. 透過 Insertion Sort 找出每一組的中位數，計算結果會得出 n/5（上取整）個中位數。
+3. 遞迴呼叫 Randomized Select 直到找出 n/5（上取整）個中位數中的中位數。
+4. 以剛剛找出的中位數的中位數為 pivot ，執行 Partition 並且確定 pivot 為第 i 小的數
+
