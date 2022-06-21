@@ -10,7 +10,7 @@
 排序演算法：Selection sort、Merge sort、Couting sort、Quick sort等
 
 
-搜尋演算法：Selection search
+搜尋演算法：Randomized Select
 
 
 動態規劃：LCS、0-1backpack、MCM等
