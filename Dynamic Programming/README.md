@@ -59,7 +59,7 @@ l1[]、l2[]儲存的是從哪一條裝配線抵達此工作站，舉例來說，
 3. (A2xA3xA4)A5
 也就是遍歷目前長度下的每個切割點計算 cost 並找出最佳解。   
 
-我們假設矩陣 Ai 的 row & column 為 pi-1xpi，m[i, j]表示 Ai~Aj的最小運算 cost，以下是關係式：
+我們假設矩陣 Ai 的 row & column 為 p(i-1)xpi，m[i, j]表示 Ai~Aj的最小運算 cost，以下是關係式：
 
 <img width="500" alt="截圖 2022-07-04 下午7 42 28" src="https://user-images.githubusercontent.com/103521272/177147854-6a3ffdb1-f9e7-4397-b0ed-0c1de3ea1c9d.png">
 
