@@ -43,7 +43,7 @@ l1[]、l2[]儲存的是從哪一條裝配線抵達此工作站，舉例來說，
 
 <img width="500" alt="截圖 2022-07-04 下午6 59 42" src="https://user-images.githubusercontent.com/103521272/177141490-86f56b1f-ef42-4b36-aa66-7cbd17dbcdb7.png">
 
-# Matrix Chain Multiplication
+# Matrix Chain Multiplication：O(n^3)
 >給定一個 n 個矩陣的序列，由於矩陣相乘的順序在運算的 cost 上會造成很大影響，因此希望找出最小化運算 cost 的矩陣鏈相乘順序  
 >假設有個矩陣鏈 <A1, A2, A3> 分別為5x4 4x20 20x3，若是依照 (A1xA2)A3 的順序計算，則 cost 為5x4x20 + 5x20x3 = 700。
 >若是依照 A1(A2xA3) 的順序計算，則 cost 為5x4x3 + 4x20x3 = 300
@@ -78,5 +78,6 @@ s[i][j] 以及 m[i][j] 分別儲存 Ai~Aj的最佳切割點以及最小 cost ，
 <img width="500" alt="截圖 2022-07-04 下午8 01 04" src="https://user-images.githubusercontent.com/103521272/177150678-4baa6610-0410-41a7-abf9-8db4fa103124.png">
 <img width="500" alt="截圖 2022-07-04 下午8 02 17" src="https://user-images.githubusercontent.com/103521272/177150863-6bd62925-e6dd-4c25-b930-ff389f0ee193.png">
 
-
+# Longest Common Subsequence：O(mn)
+>
 
