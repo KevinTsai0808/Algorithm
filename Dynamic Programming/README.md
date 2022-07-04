@@ -7,7 +7,7 @@
 3. 最長共同子序列（Longest Common Subsequence）
 4. 0-1背包問題（0-1 Knapsack）
 
-# Assembly-Line Scheduling
+# Assembly-Line Scheduling：O(n)
 >一個工廠有兩條裝配線，而每一條裝配線都各有 i 個工作站，當一個產品要被製造時必須經過每一個工作站以完成製作  
 >然而由於加工的方法不同，因此同一個工作站下，兩條裝配線會有不同的加工時間，從一條裝配線轉移至另一條裝配線也會有轉換時間  
 >因此必須思考哪一個工作站要於哪個一條裝配線加工以最小化產品製作時間
@@ -30,3 +30,44 @@ f1[]、f2[]儲存的是到 j 工作站的最小時間成本，e1、e2代表前�
 
 - Java： （Assembly-Line Scheduling）
 <img width="500" alt="截圖 2022-07-04 下午6 22 58" src="https://user-images.githubusercontent.com/103521272/177135702-10e1513d-a1df-41e8-aa79-5b591c59be0a.png">
+
+我採用的算法為 bottom up，在23、33行可以看出當抵達工作站時，只需比較 1.同一個裝配線前一個工作站的最佳解 2.另一個裝配線前一個工作站的最佳解加上轉移時間 的大小，便可以求出到達此工作站的最佳解。
+
+l1[]、l2[]儲存的是從哪一條裝配線抵達此工作站，舉例來說，如果l1[3] = 1，則代表抵達第一條裝配線、第三個工作站的最佳路線是從第一條裝配線、第二個工作站過來的。
+
+在43~50行則是計算兩條裝配線抵達最後一個工作站的最小時間成本加上各自的 x 並且比較大小。
+
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-07-04 下午6 56 24" src="https://user-images.githubusercontent.com/103521272/177141004-36fd85f5-7716-4458-ac98-31bbeee930db.png">
+
+<img width="500" alt="截圖 2022-07-04 下午6 59 42" src="https://user-images.githubusercontent.com/103521272/177141490-86f56b1f-ef42-4b36-aa66-7cbd17dbcdb7.png">
+
+# Matrix Chain Multiplication
+>給定一個 n 個矩陣的序列，由於矩陣相乘的順序在運算的 cost 上會造成很大影響，因此希望找出最小化運算 cost 的矩陣鏈相乘順序  
+>假設有個矩陣鏈 <A1, A2, A3> 分別為5x4 4x20 20x3，若是依照 (A1xA2)A3 的順序計算，則 cost 為5x4x20 + 5x20x3 = 700。
+>若是依照 A1(A2xA3) 的順序計算，則 cost 為5x4x3 + 4x20x3 = 300
+>隨著矩陣鏈長度增加，相乘順序在運算上則會出現巨大差異
+
+首先要從原問題中劃分出子問題，假設原問題為求出 <A1, A2, A3, A4, A5, A6> 的相乘順序，我們可以知道矩陣乘法是兩兩相乘，因此在問題的最後會是兩個子矩陣鏈的相乘得出原問題的最佳解
+則我們可以假設最佳切割點為 k ，若是 k = A2，那麼兩個子矩陣鏈就分別為 <A1, A2> 和 <A3, A4, A5, A6>，接著繼續將子問題分解，求出 <A3, A4, A5, A6> 的最佳切割點，便可以往下分解問題。  
+
+從以上假設可以發現，若是我們從矩陣鏈長度為2的情況開始計算最佳切割點以及運算 cost ，則當我們計算到矩陣鏈較長的運算 cost 時，便已經確定子問題的最佳切割點，因此只需要考慮當前問題的切割點
+。舉例來說，假設我們要計算 <A2, A3, A4, A5>，表示我們已經知道矩陣鏈長度為3以下的最佳切割點了，也就是 <A2, A3, A4> 及 <A3, A4, A5> 的最佳解，因此我們只需要考慮以下三種情況的大小：
+1. A2(A3xA4xA5)
+2. (A2xA3)(A4xA5)
+3. (A2xA3xA4)A5
+也就是遍歷目前長度下的每個切割點計算 cost 並找出最佳解。   
+
+我們假設矩陣 Ai 的 row & column 為 pi-1xpi，m[i, j]表示 Ai~Aj的最小運算 cost，以下是關係式：
+
+<img width="500" alt="截圖 2022-07-04 下午7 42 28" src="https://user-images.githubusercontent.com/103521272/177147854-6a3ffdb1-f9e7-4397-b0ed-0c1de3ea1c9d.png">
+
+- Pseudocode：（MCM）
+
+<img width="500" alt="截圖 2022-07-04 下午7 48 42" src="https://user-images.githubusercontent.com/103521272/177148841-9b9b2f7d-755a-4aff-abb2-99c1afcb8b97.png">
+
+- Java：（MCM）
+
+<img width="500" alt="截圖 2022-07-04 下午7 49 48" src="https://user-images.githubusercontent.com/103521272/177149027-37ca828d-aacb-4d07-add9-443b255dab39.png">
+
