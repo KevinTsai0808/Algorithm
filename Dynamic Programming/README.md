@@ -71,3 +71,12 @@ l1[]、l2[]儲存的是從哪一條裝配線抵達此工作站，舉例來說，
 
 <img width="500" alt="截圖 2022-07-04 下午7 49 48" src="https://user-images.githubusercontent.com/103521272/177149027-37ca828d-aacb-4d07-add9-443b255dab39.png">
 
+s[i][j] 以及 m[i][j] 分別儲存 Ai~Aj的最佳切割點以及最小 cost ，在19~32行中，先從矩陣鏈長度為2開始計算，遍歷每一種長度為2的情況並計算 cost，接著尋訪矩陣鏈長度為3的每一種情況，透過剛剛算出的長度為2的最佳解找出長度為3的最佳切割點並儲存 cost 及切割點，依此類推。
+
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-07-04 下午8 01 04" src="https://user-images.githubusercontent.com/103521272/177150678-4baa6610-0410-41a7-abf9-8db4fa103124.png">
+<img width="500" alt="截圖 2022-07-04 下午8 02 17" src="https://user-images.githubusercontent.com/103521272/177150863-6bd62925-e6dd-4c25-b930-ff389f0ee193.png">
+
+
+
