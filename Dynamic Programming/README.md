@@ -19,4 +19,14 @@
 
 因此分別計算出兩種方向的時間成本並進行比較，就可以得出抵達目前工作站所需的最小時間成本，再利用目前算出的最佳解進行下一個工作站的成本計算，透過此方法，在計算下一個工作站時，不需從第一個工作站慢慢計算，只需要取得目前工作站的最佳解再加上下一個工作站的加工時間、轉換時間便可求出答案，以下是關係式：
 
-<img width="" alt="截圖 2022-07-04 下午6 06 58" src="https://user-images.githubusercontent.com/103521272/177132995-7c31108b-fe28-4716-abaf-0ca05d394767.png">
+<img width="500" alt="截圖 2022-07-04 下午6 06 58" src="https://user-images.githubusercontent.com/103521272/177132995-7c31108b-fe28-4716-abaf-0ca05d394767.png">
+
+f1[]、f2[]儲存的是到 j 工作站的最小時間成本，e1、e2代表前置時間，也就是到第一個工作站前的時間成本，aij則表示第 i 個裝配線第 j 個工作站的加工時間，tij則表示第 i 個裝配線第 j 個工作站轉移至另一個裝配線第 j+1 個工作站的轉移成本，x1、x2則表示最後一個工作站到產品完成的作業時間。
+
+- Pseudocode：（Assembly-Line Scheduling）
+
+<img width="500" alt="截圖 2022-07-04 下午6 19 38" src="https://user-images.githubusercontent.com/103521272/177135166-f3d9aa2f-6af9-417b-90a9-11cdeff16e82.png">
+<img width="500" alt="截圖 2022-07-04 下午6 19 58" src="https://user-images.githubusercontent.com/103521272/177135218-7a2e6310-173b-4698-ac64-29684058af68.png">
+
+- Java： （Assembly-Line Scheduling）
+<img width="500" alt="截圖 2022-07-04 下午6 22 58" src="https://user-images.githubusercontent.com/103521272/177135702-10e1513d-a1df-41e8-aa79-5b591c59be0a.png">
