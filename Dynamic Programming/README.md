@@ -79,5 +79,7 @@ s[i][j] 以及 m[i][j] 分別儲存 Ai~Aj的最佳切割點以及最小 cost ，
 <img width="500" alt="截圖 2022-07-04 下午8 02 17" src="https://user-images.githubusercontent.com/103521272/177150863-6bd62925-e6dd-4c25-b930-ff389f0ee193.png">
 
 # Longest Common Subsequence：O(mn)
->
+>給予兩個不同的序列，尋找出兩個序列中最長的子序列
+>例如 x = <A, B, C, B, D, A, B>，
+
 
