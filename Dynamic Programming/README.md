@@ -41,7 +41,8 @@ l1[]、l2[]儲存的是從哪一條裝配線抵達此工作站，舉例來說，
 
 <img width="500" alt="截圖 2022-07-04 下午6 56 24" src="https://user-images.githubusercontent.com/103521272/177141004-36fd85f5-7716-4458-ac98-31bbeee930db.png">
 
-<img width="500" alt="截圖 2022-07-04 下午6 59 42" src="https://user-images.githubusercontent.com/103521272/177141490-86f56b1f-ef42-4b36-aa66-7cbd17dbcdb7.png">
+<im
+    g width="500" alt="截圖 2022-07-04 下午6 59 42" src="https://user-images.githubusercontent.com/103521272/177141490-86f56b1f-ef42-4b36-aa66-7cbd17dbcdb7.png">
 
 # Matrix Chain Multiplication：O(n^3)
 >給定一個 n 個矩陣的序列，由於矩陣相乘的順序在運算的 cost 上會造成很大影響，因此希望找出最小化運算 cost 的矩陣鏈相乘順序  
@@ -79,7 +80,31 @@ s[i][j] 以及 m[i][j] 分別儲存 Ai~Aj的最佳切割點以及最小 cost ，
 <img width="500" alt="截圖 2022-07-04 下午8 02 17" src="https://user-images.githubusercontent.com/103521272/177150863-6bd62925-e6dd-4c25-b930-ff389f0ee193.png">
 
 # Longest Common Subsequence：O(mn)
->給予兩個不同的序列，尋找出兩個序列中最長的子序列
->例如 x = <A, B, C, B, D, A, B>，
+>給予兩個不同的序列，尋找出兩個序列中最長的子序列  
+>例如 x = <A, B, C, B, D, A, B>，y = <B, D, C, A, B, A>，那麼這兩個序列的 LCS 為 <B, C, B, A>
 
+首先從原問題分解出子問題，假設 x = <x1, x2, x3, x4, x5> , y = <y1, y2, y3, y4, y5, y6> 為 Input ，而 x, y 的 LCS 為序列 z = <z1, z2, z3, ..., zk>，那麼我們可以將 LCS 分成以下情況討論：
+1.  LCS 包含 x 的最後一個元素以及 y 的最後一個元素
+2.  LCS 包含 x 的最後一個元素，不包含 y 的最後一個元素 
+3.  LCS 包含 y 的最後一個元素，不包含 x 的最後一個元素 
+4.  LCS 包含 x 或 y 的最後一個元素 
 
+針對第一種情況，由於 x, y 的最後一個元素皆在 LCS 中，因此可以確定 zk 為此元素，可以將原問題解讀成 <x1, x2, x3, x4> 和 <y1, y2, y3, y4, y5> 的 LCS+1。 
+
+針對第二種情況，由於 x 的最後一個元素在 LCS 中，因此可以確定 zk 為 x 的最後一個元素，而此 LCS 和 y 的最後一個元素無關，因此可以將原問題解讀成 <x1, x2, x3, x4, x5> 和 <y1, y2, y3, y4, y5> 的 LCS。
+
+針對第三種情況，由於 y 的最後一個元素在 LCS 中，因此可以確定 zk 為 y 的最後一個元素，而此 LCS 和 x 的最後一個元素無關，因此可以將原問題解讀成 <x1, x2, x3, x4> 和 <y1, y2, y3, y4, y5, y6> 的 LCS。
+
+針對第四種情況，由於此 LCS 跟 x 的最後一個元素和 y 的最後一個元素無關，因此可以將原問題解讀成 <x1, x2, x3, x4> 和 <y1, y2, y3, y4, y5> 的 LCS。
+
+根據以上情況可以得出以下關係式：
+
+<img width="500" alt="截圖 2022-07-05 上午10 45 35" src="https://user-images.githubusercontent.com/103521272/177239371-3a48bcbe-a62f-460a-9c34-a5437bd1575c.png">
+
+c[i, j]代表的是 <x1,..., xi> 和 <y1,..., yj> 的 LCS。  
+由於我們並不知道真正的 LCS 為何，因此透過判斷 x 和 y的元素是否相等來決定是以上哪一種情況。
+  
+- Pseudocode：（LCS）
+  
+
+- Java：（LCS）  
