@@ -139,11 +139,20 @@ b[i][j] 用來記錄目前屬於1, 2, 3哪一種情況，0表示情況1、1表�
     
 <img width="500" alt="截圖 2022-07-05 下午1 11 35" src="https://user-images.githubusercontent.com/103521272/177253912-c52b4124-77d8-4d37-a2fd-70b1331f9857.png">
 
-c[i][M] 表示耐重限制為 M 下，考慮完第 i 個物品的背包總價值
+c[i][M] 表示耐重限制為 M 下，考慮完第 i 個物品的背包總價值。
     
 - Pseudocode：（0-1knapsack）
 
- ![quicklatex com-74df869757d5306b33bbf7e1b2f947bb_l3-2](https://user-images.githubusercontent.com/103521272/177255077-204a4fad-4323-4bd1-b5bb-f1cd23774dc5.svg)
+<img width="500" alt="截圖 2022-07-05 下午1 23 11" src="https://user-images.githubusercontent.com/103521272/177255275-3ca9b142-e56d-411f-ada5-0d8a3ec828e6.png">
 
-    
 - Java：（0-1knapsack）    
+
+<img width="500" alt="截圖 2022-07-05 下午1 32 28" src="https://user-images.githubusercontent.com/103521272/177256351-446f2936-e9cd-45b1-acdc-392e84f16f47.png">
+
+b[i][j] 表示在耐重為 j 的情況下，放不放物品 i ，1表示放，反之則為0。   
+
+以下是主程式碼以及執行結果：
+    
+<img width="500" alt="截圖 2022-07-05 下午1 35 49" src="https://user-images.githubusercontent.com/103521272/177256723-605d47dd-b20a-484c-bc82-9bfc9ed4400c.png">
+    
+<img width="500" alt="截圖 2022-07-05 下午1 36 52" src="https://user-images.githubusercontent.com/103521272/177256846-96c0dea4-312d-4270-bbbe-8c724c613812.png">
