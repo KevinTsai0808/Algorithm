@@ -101,10 +101,23 @@ s[i][j] 以及 m[i][j] 分別儲存 Ai~Aj的最佳切割點以及最小 cost ，
 
 <img width="500" alt="截圖 2022-07-05 上午10 45 35" src="https://user-images.githubusercontent.com/103521272/177239371-3a48bcbe-a62f-460a-9c34-a5437bd1575c.png">
 
-c[i, j]代表的是 <x1,..., xi> 和 <y1,..., yj> 的 LCS。  
+c[i, j] 代表的是 <x1,..., xi> 和 <y1,..., yj> 的 LCS 長度。  
 由於我們並不知道真正的 LCS 為何，因此透過判斷 x 和 y的元素是否相等來決定是以上哪一種情況。
   
 - Pseudocode：（LCS）
-  
+    
+<img width="500" alt="截圖 2022-07-05 上午10 53 35" src="https://user-images.githubusercontent.com/103521272/177240200-e8e6c839-444a-4ced-8aa4-c00c846f8ed3.png">
+<img width="500" alt="截圖 2022-07-05 上午10 54 17" src="https://user-images.githubusercontent.com/103521272/177240269-efdd75c7-47c8-44d0-9bf4-aa5dee831709.png">
 
 - Java：（LCS）  
+
+<img width="500" alt="截圖 2022-07-05 上午10 55 38" src="https://user-images.githubusercontent.com/103521272/177240386-be48790a-94fa-4609-9cf2-8dbe3f9212f9.png">
+
+b[i][j] 用來記錄目前屬於1, 2, 3哪一種情況，0表示情況1、1表示情況2、2表示情況3。  
+
+以下是主程式碼及執行結果：
+    
+<img width="500" alt="截圖 2022-07-05 上午11 06 21" src="https://user-images.githubusercontent.com/103521272/177241540-07ae1bb3-6b1d-4036-9054-05031d1bd8aa.png">
+<img width="500" alt="截圖 2022-07-05 上午11 10 36" src="https://user-images.githubusercontent.com/103521272/177241958-0cf59b07-4854-454b-b366-3ff64f70d3cd.png">
+
+
