@@ -48,4 +48,4 @@ DFS 會檢查每一個節點，若是節點尚未被走訪，則對此節點執�
 
 <img width="500" alt="截圖 2022-07-10 下午5 01 24" src="https://user-images.githubusercontent.com/103521272/178138295-3dad26e0-fc77-4438-a71a-b01cfb956f24.png">
 
-<img width="" alt="截圖 2022-07-10 下午5 01 54" src="https://user-images.githubusercontent.com/103521272/178138302-bec4b38a-f6c5-47e8-8335-2489ea368ca3.png">
+<img width="500" alt="截圖 2022-07-10 下午5 01 54" src="https://user-images.githubusercontent.com/103521272/178138302-bec4b38a-f6c5-47e8-8335-2489ea368ca3.png">
