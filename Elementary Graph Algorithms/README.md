@@ -31,4 +31,13 @@ DFS 的特點在於尋訪相鄰節點時，並不會像 BFS 一樣尋訪完同�
 
 - Pseudocode：（DFS）
 
-- Java：（）
+<img width="500" alt="截圖 2022-07-10 下午4 15 49" src="https://user-images.githubusercontent.com/103521272/178136938-78e6c0cd-bbba-4f57-82a1-9578ffb0b13b.png">
+
+d[] 是用來儲存開始走訪的時間，f[]是用來儲存走訪完畢的時間，π[] 則是用來儲存父節點，若是 π[0] = 1，表示是經過節點1才到達節點0的，color[]用來儲存節點的狀態，分為白、黑、灰，分別代表尚未走訪、走訪完畢以及正在走訪。  
+
+首先 DFS 會走訪每一個節點，若是
+
+
+- Java：（DFS）
+
+<img width="500" alt="截圖 2022-07-10 下午4 17 11" src="https://user-images.githubusercontent.com/103521272/178136981-701cec45-a29c-44a8-b31a-29c7d2e16cc3.png">
