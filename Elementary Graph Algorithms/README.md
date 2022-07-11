@@ -84,3 +84,26 @@ DFS 會檢查每一個節點，若是節點尚未被走訪，則對此節點執�
 <img width="500" alt="截圖 2022-07-11 下午3 29 27" src="https://user-images.githubusercontent.com/103521272/178211315-c019c047-dae6-410e-9d27-12437c78df25.png">
 
 <img width="500" alt="截圖 2022-07-11 下午3 29 41" src="https://user-images.githubusercontent.com/103521272/178211400-7be84744-ab4c-480e-8daa-6ed4c7d83ad2.png">
+
+# Strongly Connected Components：O(V+E)
+>SCC 表示區域內的點可以互通，假設區域內有 a, b, c 三個點，若此區域為 SCC ，則 a, b, c 可以透過區域內的邊相互連接  
+>當我們對原本的圖執行 SCC 後便會形成 DAG，那麼就會使後面的問題處理簡單許多
+
+和剛剛的 Topological Sort 不一樣的地方在於 SCC 的執行建立在 graph 中存在 Back Edges 的條件下，由於形成 SCC 的條件為封閉迴路，因此 Back Edges 是必要的，而 Topological Sort 則要求 graph 不能存在 Back Edges。
+
+- Pseudocode：（SCC）
+
+ <img width="500" alt="截圖 2022-07-11 下午3 46 00" src="https://user-images.githubusercontent.com/103521272/178214263-e94be7b1-f55e-49d8-92d5-ce6e5c4c35d4.png">
+
+首先對 graph 執行一次 DFS 並記錄走訪完畢的時間，接著將 graph 中的每一條邊反轉得到另一張圖，對這張新的圖再執行一次 DFS，要注意的是節點走訪的順序會依照第一次 DFS 的走訪完畢時間排序，也就是說，走訪完畢時間最晚的會最早被第二次的 DFS 走訪。執行完第二次的 DFS 所得出的每個 DFS Tree 就是 SCC。
+
+我在網路上有看到一個對於反轉每個邊較為直觀的解釋，這個解釋的意思是說如果輸入的 graph 存在封閉迴路，那麼一定存在一個區域它的邊是全部指向區域外的，而執行完第一次 DFS 後最後結束的節點會存在於區域內，當我們反轉每個邊且依照第一次 DFS 結束時間進行第二次 DFS 時，可以確保起點在這個區域內，此時原本指向其他區域的邊會因為剛剛的反轉變成全部指向區域內，如此可以保證區域內的節點可以自成一個 DFS Tree。
+
+- Java：（SCC）
+
+<img width="500" alt="截圖 2022-07-11 下午4 06 30" src="https://user-images.githubusercontent.com/103521272/178217699-5f882b22-f37c-4f1a-a46c-7ef7ff6b4f08.png">
+
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-07-11 下午4 07 48" src="https://user-images.githubusercontent.com/103521272/178217892-42472e97-42dd-43f6-a1bf-052e4e6e1f9d.png">
+<img width="500" alt="截圖 2022-07-11 下午4 08 00" src="https://user-images.githubusercontent.com/103521272/178217942-895beda0-c634-483a-adcc-d50778247d54.png">
