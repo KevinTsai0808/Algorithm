@@ -49,3 +49,38 @@ DFS 會檢查每一個節點，若是節點尚未被走訪，則對此節點執�
 <img width="500" alt="截圖 2022-07-10 下午5 01 24" src="https://user-images.githubusercontent.com/103521272/178138295-3dad26e0-fc77-4438-a71a-b01cfb956f24.png">
 
 <img width="500" alt="截圖 2022-07-10 下午5 01 54" src="https://user-images.githubusercontent.com/103521272/178138302-bec4b38a-f6c5-47e8-8335-2489ea368ca3.png">
+
+# Topological Sort：O(V+E)
+>用來排序有向圖中節點的排序方法  
+>目的是為了將節點依照邊的先後順序進行排序
+
+拓墣排序是從 DFS 延伸出來的排序法，經過此演算法排序之後，每一個節點的箭頭只會指向後方節點，而不會指往前方的節點，在介紹虛擬碼之前，要先對 DFS 中的邊的分類進行介紹，DFS 的邊可以分成以下幾種：  
+1. Tree Edges：父節點連接到子節點
+2. Back Edges：連結到自己本身、父節點、父節點的父節點⋯⋯
+3. Forward Edges：連結到子節點的子節點⋯⋯
+4. Cross Edges：連結到另一棵 DFS tree，可以理解成除了以上三種的邊  
+
+我們也可以從開始走訪/走訪完畢時間來分類這四種邊，從前面對 DFS 的介紹可以發現父節點的時間範圍一定比子節點要長且涵蓋子節點的時間範圍，因此假設現在有一條邊，我們可以觀察邊的起點和終點來判斷分類，若起點為寬區間且涵蓋終點的區間，則為 Tree Edges 或是 Forward Edges，若起點為窄區間且被終點所涵蓋，則為 Back Edges，最後若是起點和終點的區間沒有交集，則為 Cross Edges（在 DFS 中，則代表起點是被 DFS 的 for 迴圈所呼叫）。
+
+回到 Topological Sort，前面說到 Topological Sort 會使每一個節點的箭頭只會指向後方節點，而不會指往前方的節點，由此可以知道 input graph 不能夠存在 Back Edges，否則無論如何排序，仍會形成迴路。
+
+- Pseudocode：（Topological Sort）
+<img width="500" alt="截圖 2022-07-11 下午3 06 11" src="https://user-images.githubusercontent.com/103521272/178207697-35235777-508b-4ae5-9118-5e1dad50844d.png">
+
+排序的首先為執行 DFS 並記錄結束時間，在執行過程中，當有節點結束走訪時，要插入在 LinkedList 的最前方，當所有節點被放入 LinkedList 後，最後反轉整個 LinkedList 就會得到 output。
+在 graph 中，當父節點連接到子節點時，表示父節點屬於子節點的先行活動，因此在 Topological Sort 中父節點會被排到子節點前面，利用結束時間來做排序便可以完成此目標。用開始時間作為排序依據在 Cross Edge 可能會造成先行活動排在子節點後面。
+
+- Java：（Topological Sort）
+<img width="500" alt="截圖 2022-07-11 下午3 22 49" src="https://user-images.githubusercontent.com/103521272/178210216-3e0a522c-074d-449f-8339-b39437a4e44a.png">
+
+在實作上我並沒有使用 LinkedList 而是 Stack，利用 Stack LIFO 的特性取代反轉 LinkedList 我覺得比較方便。
+
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-07-11 下午3 27 48" src="https://user-images.githubusercontent.com/103521272/178211032-e28ec09c-e8b9-4e8c-9853-93f5be637a2d.png">
+
+<img width="500" alt="截圖 2022-07-11 下午3 30 22" src="https://user-images.githubusercontent.com/103521272/178211491-3780a176-d300-4e4e-90e0-1d4d3deda679.png">
+
+<img width="500" alt="截圖 2022-07-11 下午3 29 27" src="https://user-images.githubusercontent.com/103521272/178211315-c019c047-dae6-410e-9d27-12437c78df25.png">
+
+<img width="500" alt="截圖 2022-07-11 下午3 29 41" src="https://user-images.githubusercontent.com/103521272/178211400-7be84744-ab4c-480e-8daa-6ed4c7d83ad2.png">
