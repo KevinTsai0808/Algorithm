@@ -107,3 +107,10 @@ DFS 會檢查每一個節點，若是節點尚未被走訪，則對此節點執�
 
 <img width="500" alt="截圖 2022-07-11 下午4 07 48" src="https://user-images.githubusercontent.com/103521272/178217892-42472e97-42dd-43f6-a1bf-052e4e6e1f9d.png">
 <img width="500" alt="截圖 2022-07-11 下午4 08 00" src="https://user-images.githubusercontent.com/103521272/178217942-895beda0-c634-483a-adcc-d50778247d54.png">
+
+# Minimum Spanning Tree：Kruskal's : O(ElogE)  Prim's : O(VlogV+ElogV)
+> 在一個有權重的無向圖中，試圖用最少的邊找出一個樹，使得圖中的每一個節點都能被這個樹所連接
+> 由於要利用最少的邊，因此此樹不存在封閉迴圈，且找出來的數可能不只一個
+> 每條邊皆有其權重，總和權重最小的樹我們就叫做 Minimum Spanning Tree
+
+透過以上敘述，我們可以知道要形成一個 spanning tree 需要節點數減一個邊來完成，而要找出總和權重最小的樹的重點在於如何挑選形成樹的邊，以下分別介紹兩種 spanning tree 的演算法，第一種是 Kruskal's algorithm，每一次迭代採取選邊策略，第二種則是 Prim's algorithm，在每次迭代採取的則是選擇節點策略。
