@@ -108,9 +108,45 @@ DFS 會檢查每一個節點，若是節點尚未被走訪，則對此節點執�
 <img width="500" alt="截圖 2022-07-11 下午4 07 48" src="https://user-images.githubusercontent.com/103521272/178217892-42472e97-42dd-43f6-a1bf-052e4e6e1f9d.png">
 <img width="500" alt="截圖 2022-07-11 下午4 08 00" src="https://user-images.githubusercontent.com/103521272/178217942-895beda0-c634-483a-adcc-d50778247d54.png">
 
-# Minimum Spanning Tree：Kruskal's : O(ElogE)  Prim's : O(VlogV+ElogV)
+# Minimum Spanning Tree：  Kruskal's : O(ElogE)  Prim's : O(VlogV+ElogV)
 > 在一個有權重的無向圖中，試圖用最少的邊找出一個樹，使得圖中的每一個節點都能被這個樹所連接
 > 由於要利用最少的邊，因此此樹不存在封閉迴圈，且找出來的數可能不只一個
 > 每條邊皆有其權重，總和權重最小的樹我們就叫做 Minimum Spanning Tree
 
 透過以上敘述，我們可以知道要形成一個 spanning tree 需要節點數減一個邊來完成，而要找出總和權重最小的樹的重點在於如何挑選形成樹的邊，以下分別介紹兩種 spanning tree 的演算法，第一種是 Kruskal's algorithm，每一次迭代採取選邊策略，第二種則是 Prim's algorithm，在每次迭代採取的則是選擇節點策略。
+
+- Pseudocode：（Kruskal's algorithm）
+
+<img width="500" alt="截圖 2022-07-14 上午8 47 43" src="https://user-images.githubusercontent.com/103521272/178861076-6b991ac3-9b20-4b4a-b611-b2c981c75650.png">
+
+Kruskal 的核心概念在於從權重最小的邊開始遍歷，如果邊所連接的兩個節點尚未被其他邊所連接，表示目前選擇的邊是可行的。為了要在每一次選擇邊時都能先檢查邊所連接的兩個節點是否被其他邊所連接，這邊會利用到 Disjoint set 的 Make-set, Union, Find-set 方法，可以看到第二、三行，首先將每一個節點視為一個獨立的集合，接著排序邊的權重並從最小的邊開始走訪，第六行的 Find-set 會取得集合中的代表元素，如果邊連接的兩個節點其代表元素不相等，則將兩者的集合合併，也就是改變其中一個集合的代表元素。
+
+- Java：（Kruskal's algorithm）
+
+<img width="500" alt="截圖 2022-07-14 上午9 03 25" src="https://user-images.githubusercontent.com/103521272/178862561-1771ed2d-164c-4afa-934e-5a045af11aea.png">
+
+我首先宣告了可以存放 Edge 物件的陣列，也就是用來存放圖中的每個邊，接著 implements Comparable 介面並 override compareTo 方法來讓後面的排序可以依照邊的權重作為排序標準（完整程式碼放在檔案），而 subset 陣列則是用來儲存每一個集合，透過 parent attribute 來儲存集合的代表。  
+
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-07-14 上午9 42 52" src="https://user-images.githubusercontent.com/103521272/178869138-4c3c3ac8-c799-450a-9070-a858ff23ecaa.png">
+
+<img width="500" alt="截圖 2022-07-14 上午9 49 21" src="https://user-images.githubusercontent.com/103521272/178873133-50ac9a5f-f828-452f-9fe1-a52894a11748.png">
+
+- Pseudocode：（Prim's algorithm）
+
+<img width="500" alt="截圖 2022-07-14 上午9 51 02" src="https://user-images.githubusercontent.com/103521272/178874346-87621fac-1e96-4045-a41a-4968aca56aeb.png">
+
+Prim 的核心概念則是在於每次迭代選擇 key 值最小的節點，而每個節點的 key 值則是透過邊的權重決定，隨著迭代次數增加，延伸出的邊會越多，每個節點的 key 值可能不斷更新。一開始除了 source 每個節點的 key 值皆為一個極大值，然後將每個節點都放入 priority queue，接著選擇 key 值最小的節點，也就是 source，對 source 延伸出來的邊做 relaxation ，假設 source 延伸出兩條線分別連到節點 1、3，權重分別為 4、6，則執行完 8~11 行後 key[1] 和 key[3] 就會變成 4 和 6，一直到節點從 priority queue 移除之前， key 值都是可能變動的，由於是無向圖，所以不會發生節點從 priority queue 移除之後卻發現 key 值可以更低的情況。
+
+- Java：（Kruskal's algorithm)
+
+<img width="500" alt="截圖 2022-07-14 上午10 08 32" src="https://user-images.githubusercontent.com/103521272/178882613-c73e58df-8a08-47fb-9171-e5a540d67889.png">
+ 
+在 53~55 行由於改變 key 值後如果沒有進行其他處理，priority queue 中的順序是不會變的，因此必須先 remove 原本的 key 值，再加入更新後的 key 值。
+
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-07-14 上午10 26 52" src="https://user-images.githubusercontent.com/103521272/178884826-161f8af4-e423-40a6-bc27-90402978e625.png">
+
+<img width="500" alt="截圖 2022-07-14 上午10 27 28" src="https://user-images.githubusercontent.com/103521272/178884887-cd75168e-3956-4e1b-9753-42dd1bd4163b.png">
