@@ -15,6 +15,13 @@
 
 <img width="500" alt="截圖 2022-07-15 下午1 48 28" src="https://user-images.githubusercontent.com/103521272/179159249-0775eda7-6b59-47f7-8e43-53c549bd42d7.png">
 
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-07-15 下午2 43 51" src="https://user-images.githubusercontent.com/103521272/179166746-7e586926-a603-4bd7-99bd-128b1dc6425e.png">
+
+<img width="500" alt="截圖 2022-07-15 下午2 44 20" src="https://user-images.githubusercontent.com/103521272/179166827-5a3c14e9-9739-4b8a-b063-f37de23e8987.png">
+
+
 # Huffman Codes：O(nlogn)
 >給予一系列字元出現的頻率，希望透過 variable length code 來將這些字元進行編碼，目標是最小化使用的位元
 
@@ -24,5 +31,19 @@
 
 <img width="500" alt="截圖 2022-07-15 下午2 15 05" src="https://user-images.githubusercontent.com/103521272/179162678-17b8de82-39d0-4e80-ae68-e3958af06522.png">
 
-首先將所有節點都加入
+首先將所有節點都放入 Priority Queue（二元樹），接著透過迴圈每一次都取得 Priority Queue 中最小的兩個數（依照頻率排列），然後建立一個新的節點並加入 Priority Queue，節點的值為最小兩個數的頻率加總，由於每一次迴圈會將兩個節點合併，因此迴圈總共要執行 n-1 次，n 表示 input 的節點數量。
 
+Huffman Codes 的貪婪策略在於每一次的迴圈都選擇對目前這個狀態而言，使頻率加起來最少的兩個字元，而這樣的選擇方法會使頻率出現低的字元出現在二元樹的底層（編碼較長），頻率出現高的字元則出現在二元樹的較上層（編碼較短）。
+
+- Java：（Huffman Codes）
+
+<img width="500" alt="截圖 2022-07-15 下午2 37 42" src="https://user-images.githubusercontent.com/103521272/179165885-74f1a14c-b960-45a2-b4bd-264cc83e644b.png">
+
+當迴圈進行到最後一次時，我用一個物件變數 root 來儲存二元樹中的根節點，透過每一次迴圈中紀錄的左子節點（left）和右子節點（right）進行編碼的動作，其他關於 Codes 類別設定等程式碼都放在檔案中。
+
+
+以下是主程式碼以及執行結果：
+
+<img width="500" alt="截圖 2022-07-15 下午2 45 07" src="https://user-images.githubusercontent.com/103521272/179166934-b6d1ff25-d92d-4df0-88c6-d9c4fa59d404.png">
+
+<img width="500" alt="截圖 2022-07-15 下午2 45 26" src="https://user-images.githubusercontent.com/103521272/179166999-2fc4e53e-b18e-46fe-8095-e0081bdcff2c.png">
