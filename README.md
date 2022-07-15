@@ -15,8 +15,9 @@
 
 動態規劃：LCS、0-1backpack、MCM等
 
+貪婪演算法：Activity Selection、Huffman Codes
 
-圖論：BFS、DFS、MST等
+圖論：BFS、DFS、MST、Shortest Path
 
 除了程式碼以外，各個演算法的觀念也有打在 medium 上，以下是我的 medium 連結：
 https://medium.com/@B_31299
