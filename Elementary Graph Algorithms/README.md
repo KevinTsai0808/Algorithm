@@ -178,3 +178,27 @@ n-1 輪的鬆弛結束後，接著要再重新走訪每個邊，如果還能進�
 
 <img width="500" alt="截圖 2022-07-19 上午9 35 29" src="https://user-images.githubusercontent.com/103521272/179645122-fa93589f-44bd-4c65-8c10-f052c069800b.png">
 
+# Dijkstra：O(VlogV+ElogV)
+>從原點開始對每個鄰邊進行鬆弛  
+>接著從 Priority Queue 挑出離原點最小的節點對其鄰邊進行鬆弛，依此類推
+
+在 Dijkstra 中，由於每次都是挑出最小值，因此當節點從 Priority Queue 被挑選出來代表此節點的最佳路徑已被確定，在這樣的條件下，圖中不能夠存在負權重的邊。
+
+- Pseudocode：（Dijkstra）
+
+<img width="500" alt="截圖 2022-07-19 上午10 05 26" src="https://user-images.githubusercontent.com/103521272/179648324-2ba4ed19-10cc-4459-a5aa-330c68fd8aa5.png">
+
+和 Bellman Ford 一樣，首先進行 initialize，接著將每個節點加入到 Priority Queue 中，每一次迴圈從 queue 中取出一個節點並對其鄰邊進行鬆弛，接著再取出節點，重複以上動作直到所有節點被取出。
+
+這邊用一個例子解釋為什麼不能夠存在負權重的邊，假設第二次迴圈從 queue 中取出節點 6 （第一次是原點），表示到達節點 6 的最佳路徑為 0->6，若是存在一個節點 2 到節點 6 的邊其權重為 -10，那麼就可能會造成到達節點 6 的最佳路徑不是 0->6，和演算法執行結果不符，為了確保我們在取出節點時已是最佳路徑，因此在 Dijkstra 中不能存在負權重的邊。
+
+當圖中存在負權重的邊時，我們會使用 Bellman Ford 演算法來計算最短路徑，而當圖中的邊皆為正的權重時，則 Dijkstra 的執行效率較佳。
+
+- Java：（Dijkstra）
+<img width="500" alt="截圖 2022-07-19 上午10 20 44" src="https://user-images.githubusercontent.com/103521272/179650211-9b70d763-ae95-4c1b-ba55-0df34490ed89.png">
+
+以下是主程式碼及執行結果：
+
+<img width="500" alt="截圖 2022-07-19 上午10 24 35" src="https://user-images.githubusercontent.com/103521272/179650627-be924b7a-f3d2-4702-a1ca-e8bdbfb2b095.png">
+
+<img width="500" alt="截圖 2022-07-19 上午10 25 08" src="https://user-images.githubusercontent.com/103521272/179650708-4abcae99-8710-41c6-9ca5-acbfe84355ca.png">
