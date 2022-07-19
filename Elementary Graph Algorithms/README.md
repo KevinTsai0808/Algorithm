@@ -150,3 +150,22 @@ Prim 的核心概念則是在於每次迭代選擇 key 值最小的節點，而�
 <img width="500" alt="截圖 2022-07-14 上午10 26 52" src="https://user-images.githubusercontent.com/103521272/178884826-161f8af4-e423-40a6-bc27-90402978e625.png">
 
 <img width="500" alt="截圖 2022-07-14 上午10 27 28" src="https://user-images.githubusercontent.com/103521272/178884887-cd75168e-3956-4e1b-9753-42dd1bd4163b.png">
+
+# Bellman Ford：O(VE)
+>對所有 n 個節點做 n-1 輪的鬆弛
+>每一次鬆弛都可能改變之前已經計算好的路徑
+
+首先要介紹的第一個最短路徑演算法為 Bellman Ford Algorithm ，和等等要介紹的 Dijkstra Algorithm 不一樣的是 Bellman Ford Algorithm 可以處理帶有負權重的邊的圖，以下會詳細解釋。
+
+- Pseudocode：（Bellman Ford）
+
+<img width="500" alt="截圖 2022-07-19 上午8 49 16" src="https://user-images.githubusercontent.com/103521272/179640558-11bf8f52-5cbb-4494-aba3-17a388ef75cb.png">
+
+initialize 主要是將每個點與 source 的距離（d[]）設定成 sentinel（除了 source 本身），後續再透過 relax 改變距離。接著要進行第一輪的鬆弛，執行方式就是走訪每個邊，如果邊的終點目前的距離比邊的起點加上邊的權重大（d[v] > d[u] + w），那麼就將終點的距離改成邊的起點加上邊的權重，每一個邊計算完為執行一輪，由於我們有 n 個節點，因此要執行 n-1 輪。
+
+假設現在有兩條邊，分別是 1 到 2 和 2 到 3，如果今天是先走訪 2 到 3 再走 1 到 2，那麼一開始走訪 2 到 3 的邊時會因為 1 到 2為 sentinel 而無法進行 relax，萬一後面走訪到 1 到 2 時節點 2 與 source 的距離由於 relax 降低了，此時就會形成 2 到 3 沒被更新到的狀況，因此 relax 要重複做好幾輪才能得到最佳解。  
+
+n-1 輪的鬆弛結束後，接著要再重新走訪每個邊，如果還能進行 relax，也就是 d[v] > d[u] + w，代表圖中有出現負權重迴圈，每一次走訪時的最短距離都會被更新，無法找出最佳解。
+
+- Java：（Bellman Ford）
+<img width="500" alt="截圖 2022-07-19 上午9 12 08" src="https://user-images.githubusercontent.com/103521272/179642603-5c9a0d09-58dc-4fdf-a2f9-eae0288c3b20.png">
