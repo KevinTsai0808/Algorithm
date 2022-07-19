@@ -139,7 +139,7 @@ Kruskal 的核心概念在於從權重最小的邊開始遍歷，如果邊所連
 
 Prim 的核心概念則是在於每次迭代選擇 key 值最小的節點，而每個節點的 key 值則是透過邊的權重決定，隨著迭代次數增加，延伸出的邊會越多，每個節點的 key 值可能不斷更新。一開始除了 source 每個節點的 key 值皆為一個極大值，然後將每個節點都放入 priority queue，接著選擇 key 值最小的節點，也就是 source，對 source 延伸出來的邊做 relaxation ，假設 source 延伸出兩條線分別連到節點 1、3，權重分別為 4、6，則執行完 8~11 行後 key[1] 和 key[3] 就會變成 4 和 6，一直到節點從 priority queue 移除之前， key 值都是可能變動的，由於是無向圖，所以不會發生節點從 priority queue 移除之後卻發現 key 值可以更低的情況。
 
-- Java：（Kruskal's algorithm)
+- Java：（Prim's algorithm)
 
 <img width="500" alt="截圖 2022-07-14 上午10 08 32" src="https://user-images.githubusercontent.com/103521272/178882613-c73e58df-8a08-47fb-9171-e5a540d67889.png">
  
