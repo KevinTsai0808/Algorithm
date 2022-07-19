@@ -168,4 +168,13 @@ initialize 主要是將每個點與 source 的距離（d[]）設定成 sentinel�
 n-1 輪的鬆弛結束後，接著要再重新走訪每個邊，如果還能進行 relax，也就是 d[v] > d[u] + w，代表圖中有出現負權重迴圈，每一次走訪時的最短距離都會被更新，無法找出最佳解。
 
 - Java：（Bellman Ford）
-<img width="500" alt="截圖 2022-07-19 上午9 12 08" src="https://user-images.githubusercontent.com/103521272/179642603-5c9a0d09-58dc-4fdf-a2f9-eae0288c3b20.png">
+
+ <img width="500" alt="截圖 2022-07-19 上午9 33 58" src="https://user-images.githubusercontent.com/103521272/179644952-93e7d6d2-0732-49dd-ae12-3ecb46a87f6a.png">
+
+
+以下是主程式碼及執行結果：
+
+<img width="500" alt="截圖 2022-07-19 上午9 35 47" src="https://user-images.githubusercontent.com/103521272/179645155-41ec5e44-83a2-4f3b-bc3d-15e3786bad17.png">
+
+<img width="500" alt="截圖 2022-07-19 上午9 35 29" src="https://user-images.githubusercontent.com/103521272/179645122-fa93589f-44bd-4c65-8c10-f052c069800b.png">
+
